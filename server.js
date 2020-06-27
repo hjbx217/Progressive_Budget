@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-
+// routes
+app.use(require("./routes/api.js"));
 //var MONGODB_URI = process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj";
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj",
@@ -33,9 +34,6 @@ mongoose.connect("mongodb://localhost/budget", {
   useNewUrlParser: true,
   useFindAndModify: false
 });*/
-
-// routes
-app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
