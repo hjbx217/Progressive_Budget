@@ -1,9 +1,11 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const compression = require("compression");
+//const compression = require("compression");
 
 const PORT = process.env.port||3000;
+
+//http.createServer(onRequest).listen(process.env.PORT || 3000)
 
 const app = express();
 
@@ -24,6 +26,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds0459
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
 
 /*mongoose.connect("mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj", {
   useNewUrlParser: true,
