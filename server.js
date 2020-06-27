@@ -25,7 +25,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds0459
 {
   useCreateIndex: true,
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useMongoClient: true
 });
 
 
