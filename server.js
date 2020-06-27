@@ -15,9 +15,14 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj";
+//var MONGODB_URI = process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj",
+{
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 /*mongoose.connect("mongodb://budget:Welcome123!@ds045907.mlab.com:45907/heroku_wlk5hfmj", {
   useNewUrlParser: true,
