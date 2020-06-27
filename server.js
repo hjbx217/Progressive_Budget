@@ -1,11 +1,11 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-//const compression = require("compression");
+const compression = require("compression");
 
 const PORT = process.env.port||3000;
 
-//http.createServer(onRequest).listen(process.env.PORT || 3000)
+http.createServer(onRequest).listen(process.env.PORT || 4000)
 
 const app = express();
 
